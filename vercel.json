@@ -1,7 +1,7 @@
 {
   "framework": null,
   "builds": [
-    { "src": "frontend/package.json", "use": "@vercel/static-build" }
+    { "src": "package.json", "use": "@vercel/static-build" }
   ],
   "git": {
     "ignoredBuildStep": "if [ \"$VERCEL_GIT_COMMIT_REF\" != \"main\" ]; then echo 'Skipping non-main' && exit 0; fi"
