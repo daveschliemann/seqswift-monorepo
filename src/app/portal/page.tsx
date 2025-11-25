@@ -36,7 +36,7 @@ export default function Portal() {
           </a>
         ))}
       </div>
-      <p className="mt-8 text-sm opacity-70">Decrypt: echo 'seqswift2025' | gpg -d pilotX.zip.gpg > pilotX.zip</p>
+      <p className="mt-8 text-sm opacity-70">Decrypt: echo 'seqswift2025' | gpg -d pilotX.zip.gpg → pilotX.zip</p>
       <a href="/" className="mt-12 inline-block text-lime-500 text-xl">← Back</a>
     </main>
   )
