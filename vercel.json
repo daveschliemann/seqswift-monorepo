@@ -1,26 +1,9 @@
 {
-  "routes": [
-    {
-      "src": "/portal(.*)",
-      "dest": "/portal$1",
-      "headers": {
-        "WWW-Authenticate": "Basic realm=\"SeqSwift Portal – enter password\""
-      },
-      "status": 401,
-      "continue": false
-    },
-    {
-      "src": "/portal(.*)",
-      "dest": "/portal$1",
-      "has": [
-        {
-          "type": "header",
-          "key": "Authorization",
-          "value": "Basic c2Vxc3dpZnQ6c2Vxc3dpZnQyMDI1"   // ← base64 of "seqswift:seqswift2025"
-        }
-      ],
-      "continue": true
-    }
-  ]
+  "framework": null,
+  "builds": [
+    { "src": "frontend/package.json", "use": "@vercel/static-build" }
+  ],
+  "git": {
+    "ignoredBuildStep": "if [ \"$VERCEL_GIT_COMMIT_REF\" != \"main\" ]; then echo 'Skipping non-main' && exit 0; fi"
+  }
 }
-
